@@ -3,7 +3,7 @@ html {
   margin-top: 5vh;
   display: grid;
   place-items: center;
-  background: radial-gradient(rgb(65, 46, 176) 50%, rgb(187, 90, 225) 100%);
+  background: radial-gradient(rgba(65, 46, 176, 0.696) 50%, rgb(187, 90, 225) 100%);
 }
 
 body {
@@ -46,12 +46,21 @@ input::placeholder {
 .submit {
   font-size: 1.1rem;
   background-color: transparent;
-  border: none;
+  padding: 5px 5px;
+  border: 2px white;
+  border-style: solid;
+  border-radius: 8px;
   color: white;
   letter-spacing: 0.3rem;
   font-weight: bold;
   margin-top: 1rem;
   font-family: sans-serif;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background-color: rgba(82, 128, 255, 0.549);
+  color: rgb(255, 255, 255);
 }
 
 .entering {
@@ -98,5 +107,6 @@ button:hover {
 
 .line-through {
   text-decoration: line-through;
-  opacity: 0.3;
+  text-decoration-color: rgb(122, 212, 66);
+  text-decoration-thickness: 3px;
 }
