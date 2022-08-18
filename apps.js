@@ -3,9 +3,7 @@ const list = document.querySelector(".list");
 const submitBtn = document.querySelector(".submit");
 const input = document.querySelector(".input");
 
-const clearInput = function () {
-  input.value = "";
-};
+const clearInput = function () {input.value = "";};
 
 let createListItem = function () {
   let listItem = document.createElement("li");
@@ -23,24 +21,18 @@ let createListItem = function () {
   listItem.appendChild(complete);
   listItem.appendChild(remove);
   //functionality of buttons
-  remove.addEventListener("click", function () {
-    list.removeChild(listItem);
-  });
-  complete.addEventListener("click", function () {
-    listItem.classList.add("line-through");
-  });
+  remove.addEventListener("click", function () {list.removeChild(listItem);});
+  
+  complete.addEventListener("click", function () {listItem.classList.add("line-through");});
+  
 };
 
-document.addEventListener("keydown", function (e) {
-  if (e.key === `Enter`) {
-    createListItem();
-  }
+document.addEventListener("keydown", function (e) { 
+  if (e.key === `Enter`) {createListItem();}
 });
 
 document.addEventListener("keyup", function (e) {
-  if (e.key === `Enter`) {
-    clearInput();
-  }
+  if (e.key === `Enter`) {clearInput();}
 });
 submitBtn.addEventListener("mousedown", createListItem);
 submitBtn.addEventListener("mouseup", clearInput);
