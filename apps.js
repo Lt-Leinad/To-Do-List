@@ -1,6 +1,6 @@
 "use strict";
 const list = document.querySelector(".list");
-const submitBtn = document.querySelector(".submit");
+const submitButton = document.querySelector(".submit");
 const input = document.querySelector(".input");
 
 const clearInput = function () {
@@ -10,29 +10,31 @@ const clearInput = function () {
 let createListItem = function () {
   let listItem = document.createElement("li");
   listItem.innerHTML = input.value;
+
   list.appendChild(listItem);
-  console.log(listItem.innerHTML);
+
   //remove button
-  const remove = document.createElement("button");
-  remove.textContent = "Remove";
-  remove.classList.add("float-right");
+  const removeButton = document.createElement("button"); // renamed as removeButton
+  removeButton.textContent = "Remove";
+  removeButton.classList.add("float-right");
+
   //complete button
-  const complete = document.createElement("button");
-  complete.textContent = "Complete";
-  complete.classList.add("float-right");
-  listItem.appendChild(complete);
-  listItem.appendChild(remove);
+  const completeButton = document.createElement("button");
+  completeButton.textContent = "Complete";
+  completeButton.classList.add("float-right");
+  listItem.appendChild(completeButton);
+  listItem.appendChild(removeButton);
   //functionality of buttons
-  remove.addEventListener("click", function () {
+  removeButton.addEventListener("click", function () {
     list.removeChild(listItem);
   });
-  complete.addEventListener("click", function () {
+  completeButton.addEventListener("click", function () {
     listItem.classList.add("line-through");
   });
 };
 
 document.addEventListener("keydown", function (e) {
-  if (e.key === `Enter`) {
+  if (e.key === `Enter` && input.value != "") { // fixed bug where clicking ENTER creates a empty list item
     createListItem();
   }
 });
@@ -42,5 +44,5 @@ document.addEventListener("keyup", function (e) {
     clearInput();
   }
 });
-submitBtn.addEventListener("mousedown", createListItem);
-submitBtn.addEventListener("mouseup", clearInput);
+submitButton.addEventListener("mousedown", createListItem);
+submitButton.addEventListener("mouseup", clearInput); 
