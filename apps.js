@@ -45,4 +45,4 @@ document.addEventListener("keyup", function (e) {
   }
 });
 submitButton.addEventListener("mousedown", createListItem);
-submitButton.addEventListener("mouseup", clearInput);
+submitButton.addEventListener("mouseup", clearInput); 
