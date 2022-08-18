@@ -1,14 +1,13 @@
 html {
   padding: 0;
-  margin-top: 5vh;
+  margin-top: 2.5vh;
   display: grid;
   place-items: center;
   background: radial-gradient(rgb(65, 46, 176) 50%, rgb(187, 90, 225) 100%);
 }
 
 body {
-  width: 50%;
-  border: 15px solid white;
+  width: 70%;
   min-height: 70vh;
   padding: 1.5rem;
   display: grid;
@@ -21,6 +20,7 @@ body {
   color: white;
   letter-spacing: 0.5rem;
   font-family: sans-serif;
+  margin-bottom: 1rem;
 }
 
 .input {
@@ -34,6 +34,11 @@ body {
   letter-spacing: 0.3rem;
   font-weight: bold;
   font-family: sans-serif;
+  margin-bottom: 1rem;
+}
+
+input:focus {
+  outline: none;
 }
 
 input::placeholder {
@@ -73,11 +78,11 @@ li {
   font-size: 1.2rem;
   list-style: none;
   margin: 0.3rem;
-  overflow: hidden;
   color: white;
   letter-spacing: 0.3rem;
   font-weight: bold;
   font-family: sans-serif;
+  margin-bottom: 1rem;
 }
 
 button {
@@ -99,4 +104,35 @@ button:hover {
 .line-through {
   text-decoration: line-through;
   opacity: 0.3;
+}
+
+@media only screen and (max-width: 610px) {
+  /* For mobile phones:*/
+  li {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 1;
+  }
+
+  body {
+    width: 50%;
+    margin-right: 5rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  /* For mobile phones:*/
+  li {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 1;
+  }
+
+  body {
+    width: 50%;
+    margin-right: 10rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 1;
+  }
 }
